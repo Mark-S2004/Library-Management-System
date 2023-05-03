@@ -14,7 +14,5 @@ public class Reader extends User{
             if(i==this)  return;
         }
         book.BookOrderList.add(this);
-
-
     }
 }
