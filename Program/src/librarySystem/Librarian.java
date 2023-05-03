@@ -25,4 +25,10 @@ public class Librarian extends User{
     public void blockUser (User user) {
         user.setBlocked(true);
     }
+    public void addToBookOrderList (Book book, User user) {
+        for(User i: book.BookOrderList){
+            if(i==user)  return;
+        }
+        book.BookOrderList.add(user);
+    }
 }
