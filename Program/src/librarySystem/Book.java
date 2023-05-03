@@ -1,4 +1,4 @@
-package project;
+package librarySystem;
 
 public class Book {
     private String title, author;
