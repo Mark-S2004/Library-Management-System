@@ -1,31 +1,31 @@
 package librarySystem;
 
 public abstract class User  {
-        private int ID;
-        private String Password;
-        private String FirstName;
-        private String LastName;
-        private String type;
-        private String Email;
-        private String Address;
-        private int Cellphone;
-        private boolean isBlocked;
+    private int ID;
+    private String Password;
+    private String FirstName;
+    private String LastName;
+    private String type;
+    private String Email;
+    private String Address;
+    private int Cellphone;
+    private boolean isBlocked;
 
-        public User(){
-        }
-        public User(int id, String password, String firstName, String lastName, String type, String email, String address, int cellphone, boolean isBlocked) {
-            ID = id;
-            Password = password;
-            FirstName = firstName;
-            LastName = lastName;
-            this.type = type;
-            Email = email;
-            Address = address;
-            Cellphone = cellphone;
-            this.isBlocked = isBlocked;
-        }
+    public User(){
+    }
+    public User(int id, String password, String firstName, String lastName, String type, String email, String address, int cellphone, boolean isBlocked) {
+        ID = id;
+        Password = password;
+        FirstName = firstName;
+        LastName = lastName;
+        this.type = type;
+        Email = email;
+        Address = address;
+        Cellphone = cellphone;
+        this.isBlocked = isBlocked;
+    }
 
-        public boolean isBlocked() {
+    public boolean isBlocked() {
             return isBlocked;
         }
 
@@ -111,4 +111,4 @@ public abstract class User  {
             }
             return null;
         }
-    }
+}
