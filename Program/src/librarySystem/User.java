@@ -1,7 +1,6 @@
 package librarySystem;
 
 public abstract class User  {
-    public class User {
         private int ID;
         private String Password;
         private String FirstName;
@@ -100,14 +99,16 @@ public abstract class User  {
         void rent(Book book){
             book.setIsrented(true);
         }
-        Book searchBook(Book book){
-            for(Book i: library.listBooks){
-                if(i==book) return i;
+        Book searchBook(Book book) {
+            for (Book i : library.listBooks) {
+                if (i == book) return i;
             }
-            User searchUser(User user){
-                for(User i: library.listUsers){
-                    if(i==user) return i;
-                }
+            return null;
         }
-    }
+        User searchUser(User user){
+            for(User i: library.listUsers){
+                if(i==user) return i;
+            }
+            return null;
+        }
     }
