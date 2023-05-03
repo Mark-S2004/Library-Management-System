@@ -9,11 +9,12 @@ public class Reader extends User{
     {
         super( id, password, firstName, lastName, "Reader", email, address, cellphone, isBlocked);
     }
-    void addToBookOrderList(){
-        for(User i: library.BookOrderList){
+    void addToBookOrderList(Book book){
+        for(User i: book.BookOrderList){
             if(i==this)  return;
-            else library.BookOrderList.add(this);
         }
+        book.BookOrderList.add(this);
+
 
     }
 }
