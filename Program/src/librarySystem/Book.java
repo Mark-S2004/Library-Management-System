@@ -1,6 +1,9 @@
 package librarySystem;
 
+import java.util.ArrayList;
+
 public class Book {
+     ArrayList<User> BookOrderList=new ArrayList();
     private String title, author;
     private boolean isrented;
     public Book(){
