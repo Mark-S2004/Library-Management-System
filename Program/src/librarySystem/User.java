@@ -94,16 +94,16 @@ public abstract class User  {
         public void setType(String type) {
             this.type = type;
         }
-        void rent(Book book){
+        public void rent(Book book){
             book.setIsrented(true);
         }
-        Book searchBook(Book book) {
+        public Book searchBook(Book book) {
             for (Book i : library.listBooks) {
                 if (i == book) return i;
             }
             return null;
         }
-        User searchUser(User user){
+        public User searchUser(User user){
             for(User i: library.listUsers){
                 if(i==user) return i;
             }

@@ -9,7 +9,7 @@ public class Reader extends User{
     {
         super(password, firstName, lastName, "Reader", email, address, cellphone);
     }
-    void addToBookOrderList(Book book){
+    public void addToBookOrderList(Book book){
         for(User i: book.BookOrderList){
             if(i==this)  {
                 System.out.println("this user is already in the list");
