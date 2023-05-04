@@ -104,10 +104,11 @@ public abstract class User  {
             System.out.println("sorry book is not found");
             return null;
         }
-        public User searchUser(User user){
+        public User searchUser(String first , String last){
             for(User i: library.listUsers){
-                if(i==user) return i;
+                if(i.getFirstName().equals(first) && i.getLastName().equals(last)) return i;
             }
+            System.out.println("sorry user is not found");
             return null;
         }
 }
