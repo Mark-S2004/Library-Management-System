@@ -17,6 +17,12 @@ public class Book {
         this.author = author;
         this.isrented = isrented;
     }
+
+    @Override
+    public String toString() {
+        return "Title: " + this.title + "\nAuthor: " + this.author + "\nRented? " + this.isrented;
+    }
+
     public void setTitle(String s){
         this.title=s;
     }

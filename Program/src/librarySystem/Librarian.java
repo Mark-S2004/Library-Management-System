@@ -1,8 +1,8 @@
 package librarySystem;
 
 public class Librarian extends User{
-    public Librarian (int id, String password, String firstName, String lastName, String email, String address, int cellphone, boolean isBlocked) {
-        super(id, password, firstName, lastName, "Librarian", email, address, cellphone, isBlocked);
+    public Librarian (String password, String firstName, String lastName, String email, String address, int cellphone) {
+        super(password, firstName, lastName, "Librarian", email, address, cellphone);
     }
     public void addBook (Book book) {
         for (Book libraryBook: library.listBooks) {

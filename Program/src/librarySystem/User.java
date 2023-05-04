@@ -15,7 +15,7 @@ public abstract class User  {
 
     public User(){
     }
-    public User( String password, String firstName, String lastName, String type, String email, String address, int cellphone, boolean isBlocked) {
+    public User( String password, String firstName, String lastName, String type, String email, String address, int cellphone) {
         this.ID = UUID.randomUUID();
         Password = password;
         FirstName = firstName;
@@ -24,7 +24,12 @@ public abstract class User  {
         Email = email;
         Address = address;
         Cellphone = cellphone;
-        this.isBlocked = isBlocked;
+        this.isBlocked = false;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.FirstName + " " + this.LastName + "\nEmail: " + this.Email + "\nType: " + this.type;
     }
 
     public boolean isBlocked() {
@@ -94,23 +99,21 @@ public abstract class User  {
         public void setType(String type) {
             this.type = type;
         }
-        public void rent(Book book) {
-            if (book.getIsrented()) {
-                System.out.println("sorry book is already rented");
-            } else {
-                book.setIsrented(true);
-            }
+        public void rent(Book book){
+            book.setIsrented(true);
         }
-        public Book searchBook(Book book) {
+        public Book searchBook(String title) {
             for (Book i : library.listBooks) {
-                if (i == book) return i;
+                if (i.getTitle().equals(title)) return i;
             }
+            System.out.println("sorry book is not found");
             return null;
         }
-        public User searchUser(User user){
+        public User searchUser(String first , String last){
             for(User i: library.listUsers){
-                if(i==user) return i;
+                if(i.getFirstName().equals(first) && i.getLastName().equals(last)) return i;
             }
+            System.out.println("sorry user is not found");
             return null;
         }
 }
