@@ -15,7 +15,7 @@ public abstract class User  {
 
     public User(){
     }
-    public User( String password, String firstName, String lastName, String type, String email, String address, int cellphone, boolean isBlocked) {
+    public User( String password, String firstName, String lastName, String type, String email, String address, int cellphone) {
         this.ID = UUID.randomUUID();
         Password = password;
         FirstName = firstName;
@@ -24,7 +24,7 @@ public abstract class User  {
         Email = email;
         Address = address;
         Cellphone = cellphone;
-        this.isBlocked = isBlocked;
+        this.isBlocked = false;
     }
 
     public boolean isBlocked() {
