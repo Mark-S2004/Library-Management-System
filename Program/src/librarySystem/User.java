@@ -1,7 +1,9 @@
 package librarySystem;
 
+import java.util.UUID;
+
 public abstract class User  {
-    private int ID;
+    private UUID ID;
     private String Password;
     private String FirstName;
     private String LastName;
@@ -13,8 +15,8 @@ public abstract class User  {
 
     public User(){
     }
-    public User(int id, String password, String firstName, String lastName, String type, String email, String address, int cellphone, boolean isBlocked) {
-        ID = id;
+    public User( String password, String firstName, String lastName, String type, String email, String address, int cellphone, boolean isBlocked) {
+        this.ID = UUID.randomUUID();
         Password = password;
         FirstName = firstName;
         LastName = lastName;
@@ -33,7 +35,7 @@ public abstract class User  {
             return Cellphone;
         }
 
-        public int getID() {
+        public UUID getID() {
             return ID;
         }
 
@@ -79,10 +81,6 @@ public abstract class User  {
 
         public void setFirstName(String firstName) {
             FirstName = firstName;
-        }
-
-        public void setID(int ID) {
-            this.ID = ID;
         }
 
         public void setLastName(String lastName) {
