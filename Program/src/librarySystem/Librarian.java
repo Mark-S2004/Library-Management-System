@@ -27,7 +27,9 @@ public class Librarian extends User{
     }
     public void addToBookOrderList (Book book, User user) {
         for(User i: book.BookOrderList){
-            if(i==user)  return;
+            if(i==user) {
+                System.out.println("this user is already in the list");
+                return;}
         }
         book.BookOrderList.add(user);
     }
