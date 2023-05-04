@@ -7,7 +7,7 @@ public class Reader extends User{
     }
     public Reader(int id, String password, String firstName, String lastName, String email, String address, int cellphone, boolean isBlocked)
     {
-        super( id, password, firstName, lastName, "Reader", email, address, cellphone, isBlocked);
+        super(password, firstName, lastName, "Reader", email, address, cellphone, isBlocked);
     }
     void addToBookOrderList(Book book){
         for(User i: book.BookOrderList){
