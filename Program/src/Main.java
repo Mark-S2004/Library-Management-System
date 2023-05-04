@@ -116,7 +116,7 @@ public class Main {
                 System.out.println("Enter user last name: ");
                 String last = scanner.next();
                 User resultUser = user.searchUser(first, last);
-                resultUser.toString();
+                System.out.println(resultUser.toString());
                 break;
             case 3:
                 System.out.println("Enter book title to order: ");
@@ -161,7 +161,7 @@ public class Main {
                 System.out.println("Enter user last name: ");
                 String last = scanner.next();
                 User resultUser = user.searchUser(first, last);
-                resultUser.toString();
+                System.out.println(resultUser.toString());
                 break;
             case 3:
                 System.out.println("Enter user first name: ");
