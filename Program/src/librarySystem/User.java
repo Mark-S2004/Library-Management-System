@@ -97,10 +97,11 @@ public abstract class User  {
         public void rent(Book book){
             book.setIsrented(true);
         }
-        public Book searchBook(Book book) {
+        public Book searchBook(String title) {
             for (Book i : library.listBooks) {
-                if (i == book) return i;
+                if (i.getTitle().equals(title)) return i;
             }
+            System.out.println("sorry book is not found");
             return null;
         }
         public User searchUser(User user){
