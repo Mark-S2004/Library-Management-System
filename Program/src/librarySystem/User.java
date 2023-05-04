@@ -27,6 +27,11 @@ public abstract class User  {
         this.isBlocked = false;
     }
 
+    @Override
+    public String toString() {
+        return "Name: " + this.FirstName + " " + this.LastName + "\nEmail: " + this.Email + "\nType: " + this.type;
+    }
+
     public boolean isBlocked() {
             return isBlocked;
         }
