@@ -100,7 +100,12 @@ public abstract class User  {
             this.type = type;
         }
         public void rent(Book book){
-            book.setIsrented(true);
+            if(book.getIsrented()){
+                System.out.println("sorry book is already rented");
+            }
+            else{
+                book.setIsrented(true);
+            }
         }
         public Book searchBook(String title) {
             for (Book i : library.listBooks) {
