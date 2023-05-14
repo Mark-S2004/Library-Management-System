@@ -19,28 +19,21 @@ public class SignUpController {
         private Stage stage;
         private Scene scene;
         private Parent root;
-        boolean x;
         @FXML
         Button btnLibrarian = new Button();
         @FXML
         Button btnReader = new Button();
         @FXML
         void chooseUser(ActionEvent e) throws IOException {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Signupform.fxml"));
+                root = loader.load();
+                SignUpFormController controller = loader.getController();
                 if (e.getSource() == btnLibrarian) {
-                        x = false;
+                        controller.setUserType(false);
                 } else if (e.getSource() == btnReader) {
-                        x = true;
+                        controller.setUserType(true);
                 }
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Signupform.fxml")));
                 stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-        }
-        @FXML
-        public void switchToSigninScene(ActionEvent event) throws IOException {
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signin-signup.fxml")));
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
