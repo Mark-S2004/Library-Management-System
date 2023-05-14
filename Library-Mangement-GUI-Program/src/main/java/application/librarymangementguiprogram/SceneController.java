@@ -22,24 +22,22 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
-SignUpController user=new SignUpController();
+    SignUpController user=new SignUpController();
     @FXML
-    void jumpToUser(ActionEvent e) throws IOException{
+    void jumpToUser(ActionEvent e) throws IOException {
         if (user.x) {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reader.fxml")));
-                stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-        }
-        else if (!user.x) {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reader.fxml")));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } else if (!user.x) {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("librarian.fxml")));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        else {
+        } else {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Signin.fxml")));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             scene = new Scene(root);
