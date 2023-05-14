@@ -14,37 +14,37 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="127.0" layoutY="171.0" text="Password">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="325.0" layoutY="247.0" text="Phone Number">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="127.0" layoutY="109.0" text="Email">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="127.0" layoutY="247.0" text="Address">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
+      <TextField fx:id="tfFirstName" layoutX="130.0" layoutY="55.0" />
       <Label layoutX="328.0" layoutY="27.0" text="Last Name">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <PasswordField layoutX="127.0" layoutY="199.0" />
-      <TextField layoutX="127.0" layoutY="275.0" />
-      <TextField layoutX="325.0" layoutY="275.0" />
-      <TextField layoutX="130.0" layoutY="55.0" />
-      <TextField layoutX="328.0" layoutY="55.0" />
-      <TextField layoutX="127.0" layoutY="137.0" />
+      <TextField fx:id="tfLastName" layoutX="328.0" layoutY="55.0" />
+      <Label layoutX="127.0" layoutY="109.0" text="Email">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfEmail" layoutX="127.0" layoutY="137.0" />
+      <Label layoutX="127.0" layoutY="171.0" text="Password">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="tfPass" layoutX="127.0" layoutY="199.0" />
+      <Label layoutX="127.0" layoutY="247.0" text="Address">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfAddress" layoutX="127.0" layoutY="275.0" />
+      <Label layoutX="325.0" layoutY="247.0" text="Phone Number">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfPhone" layoutX="325.0" layoutY="275.0" />
       <Button layoutX="130.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchToSigninScene" text="Sign in" />
       <Button layoutX="417.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchToUserScene" text="Sign up" />
    </children>
