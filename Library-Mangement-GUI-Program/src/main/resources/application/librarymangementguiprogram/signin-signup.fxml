@@ -12,8 +12,8 @@
       <Label layoutX="151.0" layoutY="179.0" text="Password" />
       <PasswordField layoutX="214.0" layoutY="175.0" />
       <TextField layoutX="214.0" layoutY="134.0" />
-      <Button layoutX="263.0" layoutY="243.0" mnemonicParsing="false" onAction="#switchToScene1" text="Sign in" />
-      <Button layoutX="261.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchToScene2" text="Sign up" />
+      <Button layoutX="263.0" layoutY="243.0" mnemonicParsing="false" onAction="#jumpToUser" text="Sign in" />
+      <Button layoutX="261.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchToScene1" text="Sign up" />
       <TextField layoutX="214.0" layoutY="90.0" />
       <Label layoutX="149.0" layoutY="94.0" text="FirstName" />
    </children>
