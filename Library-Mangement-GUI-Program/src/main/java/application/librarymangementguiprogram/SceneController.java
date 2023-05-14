@@ -24,7 +24,7 @@ public class SceneController {
     }
     SignUpController user=new SignUpController();
     @FXML
-    void jumpToUser(ActionEvent e) throws IOException {
+    void switchToUserScene(ActionEvent e) throws IOException {
         if (user.x) {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reader.fxml")));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
