@@ -26,14 +26,11 @@ public class SignUpController {
         Button btnReader = new Button();
         @FXML
         void chooseUser(ActionEvent e) throws IOException {
-
                 if (e.getSource() == btnLibrarian) {
                         x = false;
                 } else if (e.getSource() == btnReader) {
                         x = true;
                 }
-
-
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Signupform.fxml")));
                 stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                 scene = new Scene(root);
