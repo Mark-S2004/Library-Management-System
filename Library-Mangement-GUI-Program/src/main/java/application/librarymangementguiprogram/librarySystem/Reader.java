@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Reader extends User{
     public Reader(){
     }
-    public Reader(String password, String firstName, String lastName, String email, String address, int cellphone)
+    public Reader(String password, String firstName, String lastName, String email, String address, double cellphone)
     {
         super(password, firstName, lastName, "Reader", email, address, cellphone);
     }

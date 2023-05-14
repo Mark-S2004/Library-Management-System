@@ -1,7 +1,7 @@
 package application.librarymangementguiprogram.librarySystem;
 
 public class Librarian extends User{
-    public Librarian (String password, String firstName, String lastName, String email, String address, int cellphone) {
+    public Librarian (String password, String firstName, String lastName, String email, String address, double cellphone) {
         super(password, firstName, lastName, "Librarian", email, address, cellphone);
     }
     public void addBook (Book book) {

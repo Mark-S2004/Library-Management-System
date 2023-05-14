@@ -10,12 +10,12 @@ public abstract class User  {
     private String type;
     private String Email;
     private String Address;
-    private int Cellphone;
+    private double Cellphone;
     private boolean isBlocked;
 
     public User(){
     }
-    public User( String password, String firstName, String lastName, String type, String email, String address, int cellphone) {
+    public User( String password, String firstName, String lastName, String type, String email, String address, double cellphone) {
         this.ID = UUID.randomUUID();
         Password = password;
         FirstName = firstName;
@@ -36,7 +36,7 @@ public abstract class User  {
             return isBlocked;
         }
 
-        public int getCellphone() {
+        public double getCellphone() {
             return Cellphone;
         }
 
