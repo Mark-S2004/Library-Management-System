@@ -1,5 +1,4 @@
 package application.librarymangementguiprogram;
-
 import application.librarymangementguiprogram.librarySystem.Librarian;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +24,6 @@ public class SignUpController {
         Button btnLibrarian = new Button();
         @FXML
         Button btnReader = new Button();
-
         @FXML
         void chooseUser(ActionEvent e) throws IOException {
 
@@ -41,8 +39,6 @@ public class SignUpController {
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-
-
         }
         @FXML
         public void switchToScene4(ActionEvent event) throws IOException {
@@ -52,8 +48,6 @@ public class SignUpController {
                 stage.setScene(scene);
                 stage.show();
         }
-
-
 }
 
 

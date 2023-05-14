@@ -1,5 +1,4 @@
 package application.librarymangementguiprogram;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -12,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class SceneController {
-
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -33,7 +31,7 @@ SignUpController user=new SignUpController();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            }
+        }
         else if (!user.x) {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("librarian.fxml")));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -49,7 +47,5 @@ SignUpController user=new SignUpController();
             stage.show();
         }
     }
-
-
-    }
+}
 
