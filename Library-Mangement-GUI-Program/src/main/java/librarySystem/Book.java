@@ -1,4 +1,4 @@
-package application.librarymangementguiprogram.librarySystem;
+package librarySystem;
 
 import java.util.ArrayList;
 

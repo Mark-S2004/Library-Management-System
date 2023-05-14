@@ -1,10 +1,10 @@
 package application.librarymangementguiprogram;
-import application.librarymangementguiprogram.librarySystem.Librarian;
-import application.librarymangementguiprogram.librarySystem.User;
+import librarySystem.Librarian;
+import librarySystem.User;
 import java.io.IOException;
 import java.util.Objects;
 
-import application.librarymangementguiprogram.librarySystem.library;
+import librarySystem.library;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

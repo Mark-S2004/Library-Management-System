@@ -1,4 +1,4 @@
-package application.librarymangementguiprogram.librarySystem;
+package librarySystem;
 
 public class Librarian extends User{
     public Librarian (String password, String firstName, String lastName, String email, String address, double cellphone) {

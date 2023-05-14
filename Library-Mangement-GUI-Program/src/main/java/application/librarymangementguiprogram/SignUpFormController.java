@@ -1,8 +1,8 @@
 package application.librarymangementguiprogram;
 
-import application.librarymangementguiprogram.librarySystem.Librarian;
-import application.librarymangementguiprogram.librarySystem.Reader;
-import application.librarymangementguiprogram.librarySystem.library;
+import librarySystem.Librarian;
+import librarySystem.Reader;
+import librarySystem.library;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

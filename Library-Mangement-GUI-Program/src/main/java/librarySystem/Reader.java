@@ -1,6 +1,4 @@
-package application.librarymangementguiprogram.librarySystem;
-
-import java.util.ArrayList;
+package librarySystem;
 
 public class Reader extends User{
     public Reader(){
