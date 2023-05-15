@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.librarymangementguiprogram.readerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.librarymangementguiprogram.readerController">
    <children>
-      <Label layoutX="254.0" layoutY="178.0" text="Reader">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
+      <Button layoutX="275.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToSigninScene" text="Sign out" />
+      <Label layoutX="13.0" layoutY="28.0" text="First Name" />
+      <TextField layoutX="12.0" layoutY="49.0" prefHeight="25.0" prefWidth="189.0" promptText="Youssef" />
+      <Label layoutX="235.0" layoutY="28.0" text="Last Name" />
+      <TextField layoutX="239.0" layoutY="49.0" prefHeight="25.0" prefWidth="219.0" promptText="Abdelmonsef" />
+      <TextField layoutX="16.0" layoutY="94.0" prefHeight="25.0" prefWidth="560.0" promptText="Book Title" />
+      <Button layoutX="500.0" layoutY="125.0" mnemonicParsing="false" text="Book Search" />
+      <Button layoutX="497.0" layoutY="48.0" mnemonicParsing="false" text="User Search" />
+      <Button layoutX="17.0" layoutY="126.0" mnemonicParsing="false" text="Book rent" />
+      <Button layoutX="255.0" layoutY="126.0" mnemonicParsing="false" text="Book order" />
    </children>
 </AnchorPane>
