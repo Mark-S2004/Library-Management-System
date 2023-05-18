@@ -31,8 +31,13 @@ public class readerController {
         System.out.println(reader.searchBook(tfbook.getText()).getIsrented());
     }
     @FXML
-    void searchBook(ActionEvent event){
+    void switchTobookReaderScene(ActionEvent event) throws IOException {
         reader.searchBook(tfbook.getText());
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("bookReader.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     void searchUser(ActionEvent event){
