@@ -16,10 +16,8 @@
       <TextField fx:id="tffirstname" layoutX="14.0" layoutY="63.0" prefHeight="25.0" prefWidth="167.0" />
       <TextField fx:id="tfbook" layoutX="14.0" layoutY="100.0" prefHeight="25.0" prefWidth="571.0" promptText="book title" />
       <Button layoutX="510.0" layoutY="63.0" mnemonicParsing="false" onAction="#searchUser" text="user search" />
-      <Button layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#rentBook" text="Book rent" />
-      <Button layoutX="262.0" layoutY="140.0" mnemonicParsing="false" onAction="#orderBook" text="Book order" />
-      <Button layoutX="504.0" layoutY="140.0" mnemonicParsing="false" onAction="#searchBook" text="Book search" />
-      <Button layoutX="265.0" layoutY="201.0" mnemonicParsing="false" onAction="#blockUser" text="Block user" />
+      <Button layoutX="504.0" layoutY="140.0" mnemonicParsing="false" onAction="#switchTobookLibrarianScene" text="Book search" />
+      <Button layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#blockUser" text="Block user" />
       <Button layoutX="465.0" layoutY="188.0" mnemonicParsing="false" onAction="#addBook" text="Add book to library" />
       <Button layoutX="427.0" layoutY="239.0" mnemonicParsing="false" onAction="#removeBook" text="Remove book from library" />
       <Button layoutX="269.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToSigninScene" text="Sign out" />

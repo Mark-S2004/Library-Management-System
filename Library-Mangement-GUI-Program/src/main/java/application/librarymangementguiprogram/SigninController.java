@@ -1,5 +1,7 @@
 package application.librarymangementguiprogram;
+import javafx.scene.control.Alert;
 import librarySystem.Librarian;
+import librarySystem.PassException;
 import librarySystem.User;
 import java.io.IOException;
 import java.util.Objects;
@@ -35,28 +37,47 @@ public class SigninController {
     void switchToUserScene(ActionEvent event) throws IOException {
         System.out.println(library.listUsers);
         User emailUser = null;
-        for (User libraryUser: library.listUsers) {
-            if (libraryUser.getEmail().equals(tfEmail.getText())) {
-                emailUser = libraryUser;
-                break;
+        try {
+            for (User libraryUser : library.listUsers) {
+                if (libraryUser.getEmail().equals(tfEmail.getText())) {
+                    emailUser = libraryUser;
+                    break;
+                }
+            }
+            if (emailUser == null) {
+                System.out.println("There is no users with this email. Sign up if don't have an account");
+                throw new NullPointerException();
             }
         }
-        if (emailUser == null) {
-            System.out.println("There is no users with this email. Sign up if don't have an account");
-        } else {
-            if (emailUser.getPassword().equals(tfPass.getText())) {
-                if (emailUser instanceof Librarian) {
-                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("librarian.fxml")));
-                } else {
-                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reader.fxml")));
+        catch(NullPointerException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please enter a valid user!");
+            alert.showAndWait();
+            return;
+        }
+        try {
+            if (emailUser != null) {
+                if (emailUser.getPassword().equals(tfPass.getText())) {
+                    if (emailUser instanceof Librarian) {
+                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("librarian.fxml")));
+                    } else {
+
+                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reader.fxml")));
+                    }
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
                 }
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
             } else {
-                System.out.println("Wrong Password");
+                throw new PassException("Wrong password");
             }
+        } catch(PassException a){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("wrong password");
+            alert.showAndWait();
         }
     }
 }

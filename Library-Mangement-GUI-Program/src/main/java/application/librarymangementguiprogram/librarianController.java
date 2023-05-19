@@ -30,8 +30,12 @@ public class librarianController {
         System.out.println(librarian.searchBook(tfbook.getText()).getIsrented());
     }
     @FXML
-    void searchBook(ActionEvent event){
-        librarian.searchBook(tfbook.getText());
+    void switchTobookLibrarianScene(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("bookLibrarian.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     void searchUser(ActionEvent event){
