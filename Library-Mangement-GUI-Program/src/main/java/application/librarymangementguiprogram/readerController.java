@@ -1,5 +1,6 @@
 package application.librarymangementguiprogram;
 
+import javafx.scene.control.Label;
 import librarySystem.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +25,10 @@ public class readerController {
     TextField tflastname = new TextField();
     @FXML
     TextField tfbook = new TextField();
+    @FXML
+    Label labelx = new Label();
+    @FXML
+    Label labely = new Label();
     Reader reader = new Reader();
     Book book;
     @FXML
@@ -41,7 +46,13 @@ public class readerController {
     }
     @FXML
     void searchUser(ActionEvent event){
-        reader.searchUser(tffirstname.getText(),tflastname.getText());
+        User user =  reader.searchUser(tffirstname.getText(),tflastname.getText());
+        String result =user.getFirstName();
+        String result2=user.getLastName();
+        labelx.setText(result);
+        labely.setText(result2);
+
+
     }
     @FXML
     void orderBook(ActionEvent event){

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import librarySystem.*;
@@ -25,6 +26,10 @@ public class librarianController {
     TextField tflastname = new TextField();
     @FXML
     TextField tfbook = new TextField();
+    @FXML
+    Label labelx = new Label();
+    @FXML
+    Label labely = new Label();
     Librarian librarian = new Librarian();
     @FXML
     void rentBook(ActionEvent event){
@@ -48,7 +53,12 @@ public class librarianController {
     }
     @FXML
     void searchUser(ActionEvent event){
-        librarian.searchUser(tffirstname.getText(),tflastname.getText());
+        User user =  librarian.searchUser(tffirstname.getText(),tflastname.getText());
+        String result =user.getFirstName();
+        String result2=user.getLastName();
+        labelx.setText(result);
+        labely.setText(result2);
+
     }
     @FXML
     void orderBook(ActionEvent event){

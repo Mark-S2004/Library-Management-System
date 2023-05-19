@@ -22,5 +22,9 @@
       <Button layoutX="14.0" layoutY="188.0" mnemonicParsing="false" onAction="#addUser" text="Add a user to library" />
       <Button layoutX="14.0" layoutY="239.0" mnemonicParsing="false" onAction="#removeUser" text="Remove user from library" />
       <TextField fx:id="tflastname" layoutX="212.0" layoutY="63.0" />
+      <Label layoutX="28.0" layoutY="296.0" text="First name :" />
+      <Label layoutX="28.0" layoutY="330.0" prefHeight="17.0" prefWidth="61.0" text="Last name :" />
+      <Label fx:id="labelx" layoutX="116.0" layoutY="296.0" />
+      <Label fx:id="labely" layoutX="116.0" layoutY="330.0" />
    </children>
 </AnchorPane>
