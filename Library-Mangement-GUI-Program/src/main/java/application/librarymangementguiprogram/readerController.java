@@ -25,15 +25,15 @@ public class readerController {
     @FXML
     TextField tfbook = new TextField();
     Reader reader = new Reader();
-    @FXML
-    void rentBook(ActionEvent event){
-        reader.rent(reader.searchBook(tfbook.getText()));
-        System.out.println(reader.searchBook(tfbook.getText()).getIsrented());
-    }
+    Book book;
     @FXML
     void switchTobookReaderScene(ActionEvent event) throws IOException {
-        reader.searchBook(tfbook.getText());
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("bookReader.fxml")));
+        book = reader.searchBook(tfbook.getText());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("bookReader.fxml"));
+        root = loader.load();
+        bookReaderController controller = loader.getController();
+        controller.setReader(reader);
+        controller.setBook(book);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

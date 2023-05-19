@@ -17,6 +17,8 @@ public class librarianController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    Book book;
+    User user;
     @FXML
     TextField tffirstname = new TextField();
     @FXML
@@ -31,7 +33,14 @@ public class librarianController {
     }
     @FXML
     void switchTobookLibrarianScene(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("bookLibrarian.fxml")));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("bookLibrarian.fxml"));
+        root = loader.load();
+        bookLibrarianController controller = loader.getController();
+        book = librarian.searchBook(tfbook.getText());
+        user = librarian.searchUser(tffirstname.getText(), tflastname.getText());
+        controller.setLibrarian(librarian);
+        controller.setBook(book);
+        controller.setUser(user);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -47,7 +56,7 @@ public class librarianController {
     }
     @FXML
     void addUser(ActionEvent event){
-        librarian.addUser(librarian.searchUser(tffirstname.getText(),tflastname.getText()));
+        librarian.addUser(new Reader("pass", tffirstname.getText(),tflastname.getText(), "mark@g", "56 gama", 4676));
     }
     @FXML
     void removeUser(ActionEvent event){
@@ -55,7 +64,7 @@ public class librarianController {
     }
     @FXML
     void addBook(ActionEvent event){
-        librarian.addBook(librarian.searchBook(tfbook.getText()));
+        librarian.addBook(new Book(tfbook.getText(), "Mark Saleh"));
     }
     @FXML
     void removeBook(ActionEvent event){
