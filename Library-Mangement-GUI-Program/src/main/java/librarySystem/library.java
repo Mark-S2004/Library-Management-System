@@ -15,7 +15,7 @@ public class library {
     }
 
     public static ArrayList<User> listUsers;
-    static {
+     static {
         listUsers= new ArrayList<>();
         listUsers.add(new Reader("pass1","John","Doe","john@email.com","123 Main St",1234567890));
         listUsers.add(new Reader("pass2","Jane","Doe","jane@email.com","124 Main St",1234567891));
