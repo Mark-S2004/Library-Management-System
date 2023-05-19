@@ -1,6 +1,8 @@
 package application.librarymangementguiprogram;
 
+import javafx.scene.control.Alert;
 import librarySystem.Librarian;
+import librarySystem.PassException;
 import librarySystem.Reader;
 import librarySystem.library;
 import javafx.event.ActionEvent;
@@ -40,21 +42,68 @@ public class SignUpFormController {
 
     @FXML
     void switchToUserScene(ActionEvent event) throws IOException {
+        try{
         if (userType) {
             Reader user = new Reader(
                     tfPass.getText(), tfFirstName.getText(), tfLastName.getText(),
                     tfEmail.getText(), tfAddress.getText(), Double.parseDouble(tfPhone.getText())
             );
+            if(user.getCellphone()==Double.parseDouble("")){
+                throw new NumberFormatException();
+            }
+            else if (user.getAddress().equals("") || user.getEmail().equals("") || user.getFirstName().equals("") || user.getLastName().equals("") || user.getPassword().equals("")) {
+                throw new PassException("please fill all input fields");
+            }
             library.listUsers.add(user);
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reader.fxml")));
-        } else {
-            Librarian user = new Librarian(
-                    tfPass.getText(), tfFirstName.getText(), tfLastName.getText(),
-                    tfEmail.getText(), tfAddress.getText(), Double.parseDouble(tfPhone.getText())
-            );
-            library.listUsers.add(user);
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("librarian.fxml")));
         }
+        }
+        catch(NumberFormatException n){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("please enter valid input");
+            alert.showAndWait();
+            return;
+        }
+        catch(PassException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(e.getMessage());
+            alert.showAndWait();
+            return;
+        }
+        try {
+            if (!userType) {
+
+                Librarian user = new Librarian(
+                        tfPass.getText(), tfFirstName.getText(), tfLastName.getText(),
+                        tfEmail.getText(), tfAddress.getText(), Double.parseDouble(tfPhone.getText())
+                );
+                if(user.getCellphone()==Double.parseDouble("")){
+                    throw new NumberFormatException();
+                }
+                else if (user.getAddress().equals("") || user.getEmail().equals("") || user.getFirstName().equals("") || user.getLastName().equals("") || user.getPassword().equals("")) {
+                    throw new PassException("please fill all input fields");
+                }
+                library.listUsers.add(user);
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("librarian.fxml")));
+            }
+        }
+        catch(NumberFormatException n){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("please enter valid input");
+            alert.showAndWait();
+            return;
+        }
+        catch(PassException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(e.getMessage());
+            alert.showAndWait();
+            return;
+        }
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
