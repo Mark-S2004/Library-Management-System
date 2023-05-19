@@ -48,10 +48,7 @@ public class SignUpFormController {
                     tfPass.getText(), tfFirstName.getText(), tfLastName.getText(),
                     tfEmail.getText(), tfAddress.getText(), Double.parseDouble(tfPhone.getText())
             );
-            if(user.getCellphone()==Double.parseDouble("")){
-                throw new NumberFormatException();
-            }
-            else if (user.getAddress().equals("") || user.getEmail().equals("") || user.getFirstName().equals("") || user.getLastName().equals("") || user.getPassword().equals("")) {
+            if (user.getAddress().equals("") || user.getEmail().equals("") || user.getFirstName().equals("") || user.getLastName().equals("") || user.getPassword().equals("")) {
                 throw new PassException("please fill all input fields");
             }
             library.listUsers.add(user);
@@ -79,10 +76,7 @@ public class SignUpFormController {
                         tfPass.getText(), tfFirstName.getText(), tfLastName.getText(),
                         tfEmail.getText(), tfAddress.getText(), Double.parseDouble(tfPhone.getText())
                 );
-                if(user.getCellphone()==Double.parseDouble("")){
-                    throw new NumberFormatException();
-                }
-                else if (user.getAddress().equals("") || user.getEmail().equals("") || user.getFirstName().equals("") || user.getLastName().equals("") || user.getPassword().equals("")) {
+                if (user.getAddress().equals("") || user.getEmail().equals("") || user.getFirstName().equals("") || user.getLastName().equals("") || user.getPassword().equals("")) {
                     throw new PassException("please fill all input fields");
                 }
                 library.listUsers.add(user);
