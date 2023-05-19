@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +18,9 @@ public class HelloApplication extends Application {
 
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signin-signup.fxml")));
             Scene scene = new Scene(root);
+            String css = this.getClass().getResource("application.css").toExternalForm();
+            scene.getStylesheets().add(css);
+            scene.getStylesheets();
             stage.setTitle("Library");
             stage.setScene(scene);
             stage.show();
@@ -27,6 +31,8 @@ public class HelloApplication extends Application {
         catch (Exception a) {
             a.printStackTrace();
         }
+
+
     }
 
 

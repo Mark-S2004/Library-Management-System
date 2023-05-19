@@ -1,0 +1,15 @@
+.root{
+  -fx-background-color: #274472;
+ }
+ .label{
+  -fx-font-size: 12;
+  -fx-font-family: "Lucida Console";
+  -fx-text-fill: "white";
+ }
+ }
+ #emaillabel{
+ -fx font-size: 12;
+ }
+ #passlabel{
+ -fx font-size: 12;
+ }
